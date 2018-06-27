@@ -18,8 +18,9 @@ $(document).ready(function() {
         for(let i=0; i < gifs.length; i++){
             const gifDiv = $('<div>').addClass('row imageDiv');
             const gifCol = $('<div>').addClass('col-lg-12');
+            const gifRating = $('<h2>').text(`Rating: ${gifs[i].rating}`)
             const newGif = $('<img>').attr('src', gifs[i].images.original.url)
-            gifCol.append(newGif);
+            gifCol.append(gifRating, newGif);
             gifDiv.append(gifCol);
             imageArea.append(gifDiv);
         }
